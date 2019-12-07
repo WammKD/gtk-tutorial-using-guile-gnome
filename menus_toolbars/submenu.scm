@@ -6,7 +6,7 @@
         [menubar  (make <gtk-menu-bar>)]
         [fileMenu (make <gtk-menu>)]
         [imprMenu (make <gtk-menu>)]
-        [sep      (make <gtk-separator-tool-item>)]
+        [sep      (make <gtk-separator-menu-item>)]
         [fileMi   (make <gtk-menu-item> #:label "File")]
         [imprMi   (make <gtk-menu-item> #:label "Import")]
         [feedMi   (make <gtk-menu-item> #:label "Import news feed…")]
