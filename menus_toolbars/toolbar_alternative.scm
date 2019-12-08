@@ -20,20 +20,20 @@
 
     (add window vbox)
 
-    (set-style toolbar 'icons)
+    (set-style        toolbar 'icons)
     (set-border-width toolbar 2)
 
-    (insert toolbar new -1)
+    (insert toolbar new  -1)
     (insert toolbar open -1)
     (insert toolbar save -1)
-    (insert toolbar sep -1)
+    (insert toolbar sep  -1)
     (insert toolbar exit -1)
 
     (pack-start vbox toolbar #f #f 5)
 
     (connect exit 'clicked (lambda (w) (gtk-main-quit)))
     (connect window 'destroy (lambda (w) (gtk-main-quit)))
-    
+
     (show-all window)))
 
 (toolbar-demo)
