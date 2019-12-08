@@ -1,4 +1,4 @@
-(use-modules (gnome-2) (oop goops) (gnome gobject) (gnome gtk))
+(use-modules (gnome-2) (oop goops) (gnome gtk))
 
 (define (enter-button button)
   (display "Ya hovered!")

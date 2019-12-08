@@ -1,6 +1,6 @@
-(use-modules (gnome-2)       (oop   goops)
-             (gnome gobject) (srfi  srfi-11)
-             (gnome gtk)     (gnome gtk     gdk-event))
+(use-modules (gnome-2)             (oop  goops)
+             (gnome gtk)           (srfi srfi-11)
+             (gnome gtk gdk-event))
 
 (define (on-button-press window event)
   (define LEFT_CLICK 1)
