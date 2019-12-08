@@ -1,13 +1,13 @@
 (use-modules (gnome-2) (oop goops) (gnome gobject) (gnome gtk))
 
 (define (corner-buttons)
-  (let ([window  (gtk-window-new 'toplevel)]
-        [ okBtn  (gtk-button-new-with-label "OK")]
-        [clsBtn  (gtk-button-new-with-label "Close")]
-        [vbox    (gtk-vbox-new #f 0)]
-        [hbox    (gtk-hbox-new #t 3)]
-        [halign  (gtk-alignment-new 1 0 0 0)]
-        [valign  (gtk-alignment-new 0 1 0 0)])
+  (let ([window (gtk-window-new 'toplevel)]
+        [ okBtn (gtk-button-new-with-label "OK")]
+        [clsBtn (gtk-button-new-with-label "Close")]
+        [vbox   (gtk-vbox-new #f 0)]
+        [hbox   (gtk-hbox-new #t 3)]
+        [halign (gtk-alignment-new 1 0 0 0)]
+        [valign (gtk-alignment-new 0 1 0 0)])
     (set-title        window "Corner buttons")
     (set-default-size window 350 200)
     (set-position     window 'center)
