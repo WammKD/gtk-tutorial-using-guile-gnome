@@ -7,7 +7,7 @@
 
 (define (windows)
   (let ([window  (gtk-window-new 'toplevel)]
-                              ;n-rows ;n-columns ;homogeneous
+                               ;n-rows ;n-columns ;homogeneous
         [table   (gtk-table-new 6       4          #f)]
         [title   (gtk-label-new "Windows")]
         [wins    (gtk-text-view-new-with-buffer)]
