@@ -1,21 +1,16 @@
-(use-modules (gnome-2)
-             (oop goops)
-             (gnome gobject)
-             (gnome gtk))
+(use-modules (gnome-2) (oop goops) (gnome gobject) (gnome gtk))
 
 (define (layout-gtkfixed)
-  (let ((window (make <gtk-window> #:type 'toplevel))
-        (fixed (make <gtk-fixed>))
-        (button1 (make <gtk-button> #:label "Button1"))
-        (button2 (make <gtk-button> #:label "Button2"))
-        (button3 (make <gtk-button> #:label "Button3"))
-        )
-
+  (let ([window  (make <gtk-window> #:type 'toplevel)]
+        [fixed   (make <gtk-fixed>)]
+        [button1 (make <gtk-button> #:label "Button1")]
+        [button2 (make <gtk-button> #:label "Button2")]
+        [button3 (make <gtk-button> #:label "Button3")])
     (add window fixed)
     
-    (set-title window "GtkFixed")
+    (set-title        window "GtkFixed")
     (set-default-size window 290 200)
-    (set-position window 'center)
+    (set-position     window 'center)
 
     (put fixed button1 150 50)
     (set-size-request button1 80 35)
