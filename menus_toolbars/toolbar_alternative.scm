@@ -14,7 +14,6 @@
         [save    (gtk-tool-button-new-from-stock (gtk-stock-id 'save))]
         [sep     (gtk-separator-tool-item-new)]
         [exit    (gtk-tool-button-new-from-stock (gtk-stock-id 'quit))])
-    
     (set-title window "toolbar")
     (set-default-size window 250 200)
     (set-position window 'center)
