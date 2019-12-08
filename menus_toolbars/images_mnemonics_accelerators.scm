@@ -21,7 +21,7 @@
 
     (add-accelerator quitMi                     "activate" accelGroup
                      (gdk-keyval-from-name "q") (ash 1 2)  1) ;https://lazka.github.io/pgi-docs/Gtk-3.0/flags.html#Gtk.AccelFlags
-                                                           ;https://code.woboq.org/gtk/gtk/gdk/gdktypes.h.html#GDK_CONTROL_MASK
+                                                ;https://code.woboq.org/gtk/gtk/gdk/gdktypes.h.html#GDK_CONTROL_MASK
 
     (set-submenu fileMi fileMenu)
     (gtk-menu-shell-append fileMenu newMi)
