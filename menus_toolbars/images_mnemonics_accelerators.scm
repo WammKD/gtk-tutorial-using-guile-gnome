@@ -24,8 +24,8 @@
       "activate"
       accelGroup
       (gdk-keyval-from-name "q")
-      (make <gdk-modifier-type> #:value (ash 1 2)) ;https://code.woboq.org/gtk/gtk/gdk/gdktypes.h.html#GDK_CONTROL_MASK
-      (make <gtk-accel-flags>   #:value 1))        ;https://lazka.github.io/pgi-docs/Gtk-3.0/flags.html#Gtk.AccelFlags
+      (make <gdk-modifier-type> #:value 'control-mask) ;https://code.woboq.org/gtk/gtk/gdk/gdktypes.h.html#GDK_CONTROL_MASK
+      (make <gtk-accel-flags>   #:value 'visible))     ;https://lazka.github.io/pgi-docs/Gtk-3.0/flags.html#Gtk.AccelFlags
 
     (set-submenu fileMi fileMenu)
     (gtk-menu-shell-append fileMenu newMi)
