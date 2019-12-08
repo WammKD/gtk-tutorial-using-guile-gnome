@@ -6,7 +6,7 @@
 (define GTK_FILL   (ash 1 2))
 
 (define (windows)
-  (let ([window (gtk-window-new 'toplevel)]
+  (let ([window  (gtk-window-new 'toplevel)]
                               ;n-rows ;n-columns ;homogeneous
         [table   (gtk-table-new 6       4          #f)]
         [title   (gtk-label-new "Windows")]
