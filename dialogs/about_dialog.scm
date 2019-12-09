@@ -22,7 +22,7 @@
   #t)
 
 (define (dialog)
-  (let ([window  (gtk-window-new 'toplevel)])
+  (let ([window (gtk-window-new 'toplevel)])
     (set-title        window "Battery")
     (set-default-size window 220 150)
     (set-position     window 'center)
