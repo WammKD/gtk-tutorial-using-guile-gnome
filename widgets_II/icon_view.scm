@@ -1,6 +1,6 @@
 (use-modules (gnome-2) (oop goops) (gnome gobject) (gnome gtk))
 
-(define enum '((col-display-name . 0) (col-pixbuf . 1) (num-cols . 2)))
+(define enum '((COL_DISPLAY_NAME . 0) (COL_PIXBUF . 1) (NUM_COLS . 2)))
 
 (define (init-model)
   (define p1        (gdk-pixbuf-new-from-file "ubuntu.png"))
@@ -11,30 +11,30 @@
 
   (let ([iter1 (gtk-list-store-append listStore)])
     (gtk-list-store-set-value listStore                          iter1
-                              (assoc-ref enum 'col-display-name) "Ubuntu")
+                              (assoc-ref enum 'COL_DISPLAY_NAME) "Ubuntu")
 
-    (gtk-list-store-set-value listStore iter1 (assoc-ref enum 'col-pixbuf) p1))
+    (gtk-list-store-set-value listStore iter1 (assoc-ref enum 'COL_PIXBUF) p1))
 
   (let ([iter2 (gtk-list-store-append listStore)])
     (gtk-list-store-set-value
       listStore                          iter2
-      (assoc-ref enum 'col-display-name) "Gnumeric")
+      (assoc-ref enum 'COL_DISPLAY_NAME) "Gnumeric")
 
-    (gtk-list-store-set-value listStore iter2 (assoc-ref enum 'col-pixbuf) p2))
+    (gtk-list-store-set-value listStore iter2 (assoc-ref enum 'COL_PIXBUF) p2))
 
   (let ([iter3 (gtk-list-store-append listStore)])
     (gtk-list-store-set-value
       listStore                          iter3
-      (assoc-ref enum 'col-display-name) "Blender")
+      (assoc-ref enum 'COL_DISPLAY_NAME) "Blender")
 
-    (gtk-list-store-set-value listStore iter3 (assoc-ref enum 'col-pixbuf) p3))
+    (gtk-list-store-set-value listStore iter3 (assoc-ref enum 'COL_PIXBUF) p3))
 
   (let ([iter4 (gtk-list-store-append listStore)])
     (gtk-list-store-set-value
       listStore                          iter4
-      (assoc-ref enum 'col-display-name) "Inkscape")
+      (assoc-ref enum 'COL_DISPLAY_NAME) "Inkscape")
 
-    (gtk-list-store-set-value listStore iter4 (assoc-ref enum 'col-pixbuf) p4))
+    (gtk-list-store-set-value listStore iter4 (assoc-ref enum 'COL_PIXBUF) p4))
 
   listStore)
 
@@ -56,8 +56,8 @@
 
     (add sw iconView)
 
-    (set-text-column    iconView (assoc-ref enum 'col-display-name))
-    (set-pixbuf-column  iconView (assoc-ref enum 'col-pixbuf))
+    (set-text-column    iconView (assoc-ref enum 'COL_DISPLAY_NAME))
+    (set-pixbuf-column  iconView (assoc-ref enum 'COL_PIXBUF))
     (set-selection-mode iconView (make <gtk-selection-mode> #:value 'multiple))
 
     (connect window 'destroy (lambda (w) (gtk-main-quit)))
