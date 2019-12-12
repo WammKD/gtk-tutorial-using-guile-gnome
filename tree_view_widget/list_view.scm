@@ -29,10 +29,10 @@
       (set-text lbl (get-value model iter (genum->value LIST_ITEM))))))
 
 (define (list-view)
-  (let ([window    (gtk-window-new 'toplevel)]
-        [lst       (gtk-tree-view-new)]
-        [vbox      (gtk-vbox-new #f 0)]
-        [label     (gtk-label-new "")])
+  (let ([window (gtk-window-new 'toplevel)]
+        [lst    (gtk-tree-view-new)]
+        [vbox   (gtk-vbox-new #f 0)]
+        [label  (gtk-label-new "")])
     (set-title        window "List view")
     (set-position     window 'center)
     (set-border-width window 10)
