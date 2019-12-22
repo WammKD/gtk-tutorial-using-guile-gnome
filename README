@@ -1,5 +1,6 @@
 This project converts C code in gtk tutorial http://www.zetcode.com/tutorials/gtktutorial/
-to scheme code using guile-gnome.
+to scheme code using [guile-gnome](https://www.gnu.org/software/guile-gnome/) (gtk2) and
+[guile-gi](https://github.com/spk121/guile-gi) (gtk3).
 
 For details about guile-gnome and guile, please go to
 http://www.gnu.org/software/guile-gnome/
