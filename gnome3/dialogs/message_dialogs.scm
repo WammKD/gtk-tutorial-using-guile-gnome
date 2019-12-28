@@ -91,21 +91,21 @@
   (destroy dialog))
 
 (define (dialog a)
-  (let ([window  (make <GtkWindow>     #:application     a
-                                       #:border-width    15
-                                       #:default-width   220
-                                       #:default-height  150
-                                       #:window-position (symbol->enum
-                                                           <GtkWindowPosition>
-                                                           'center)
-                                       #:title           "Message dialogs")]
-        [table   (make <GtkTable>      #:n-rows      2  #:row-spacing    2
-                                       #:n-columns   2  #:column-spacing 2
-                                       #:homogeneous #t)]
-        [info    (make <GtkButton>     #:label "Info")]
-        [warn    (make <GtkButton>     #:label "Warning")]
-        [que     (make <GtkButton>     #:label "Question")]
-        [err     (make <GtkButton>     #:label "Error")])
+  (let ([window (make <GtkWindow> #:application     a
+                                  #:border-width    15
+                                  #:default-width   220
+                                  #:default-height  150
+                                  #:window-position (symbol->enum
+                                                      <GtkWindowPosition>
+                                                      'center)
+                                  #:title           "Message dialogs")]
+        [table  (make <GtkTable>  #:n-rows      2  #:row-spacing    2
+                                  #:n-columns   2  #:column-spacing 2
+                                  #:homogeneous #t)]
+        [info   (make <GtkButton> #:label "Info")]
+        [warn   (make <GtkButton> #:label "Warning")]
+        [que    (make <GtkButton> #:label "Question")]
+        [err    (make <GtkButton> #:label "Error")])
     (attach table info 0 1 0 1 GTK_FILL GTK_FILL 3 3)
     (attach table warn 1 2 0 1 GTK_FILL GTK_FILL 3 3)
     (attach table que  0 1 1 2 GTK_FILL GTK_FILL 3 3)
