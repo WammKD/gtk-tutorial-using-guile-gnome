@@ -8,8 +8,13 @@
 (load-by-name "Gtk" "ApplicationWindow")
 (load-by-name "Gtk" "WindowPosition")
 (load-by-name "Gtk" "Box") ;; pack-start
+(load-by-name "Gtk" "ColorSelection")
+(load-by-name "Gtk" "ColorSelectionDialog")
 (load-by-name "Gtk" "Container") ;; add
+(load-by-name "Gtk" "Dialog")
 (load-by-name "Gtk" "Label")
+(load-by-name "Gtk" "ResponseType")
+(load-by-name "Gtk" "StateFlags")
 (load-by-name "Gtk" "Toolbar")
 (load-by-name "Gtk" "ToolbarStyle")
 (load-by-name "Gtk" "ToolButton")
@@ -23,10 +28,14 @@
   (define result (run dialog))
 
   (when (= result (enum->number (symbol->enum <GtkResponseType> 'ok)))
+    ;; I can't figure out why this won't work
+    ;; Seemingly, it says it only takes two arguments but parsing out
+    ;; what these functions do is unyielding and it doesn't match with
+    ;; the Gnome documentation for this function (widget:modify-fg)
     (modify-fg
       lbl
       (symbol->enum <GtkStateFlags> 'normal)
-      (get (get dialog 'color-selection) 'current-color)))
+      (current-color (get-color-selection dialog))))
 
   (destroy dialog))
 
@@ -52,7 +61,7 @@
     (pack-start vbox toolbar #f #f 5)
     (pack-start vbox label   #t #f 5)
 
-    (connect font 'clicked (lambda (f) (select-font f label)))
+    (connect font clicked (lambda (f) (select-font f label)))
 
     (show-all window)))
 
