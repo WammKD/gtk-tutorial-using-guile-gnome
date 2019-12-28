@@ -15,10 +15,21 @@
 (define app (make <GtkApplication> #:application-id "org.gtk.alignment"))
 
 (define (alignment app)
-  (let ([window (make <GtkWindow> #:application     app
-                                  #:default-height  150
-                                  #:default-width   230
-                                  #:window-position (symbol->enum
-                                                      <GtkWindowPosition>
-                                                      'center)
-                                  #:title           "GtkAlignment")]
+  (let ([window (make <GtkWindow>    #:title           "GtkAlignment"
+                                     #:application     app
+                                     #:border-width    5
+                                     #:default-width   300
+                                     #:default-height  200
+                                     #:window-position (symbol->enum
+                                                         <GtkWindowPosition>
+                                                         'center))]
+        [align  (make <GtkAlignment> #:xalign 0 #:yalign 1
+                                     #:xscale 0 #:yscale 0)]
+        [lbl    (make <GtkLabel>     #:label "bottom-left")])
+    (add align  lbl)
+    (add window align)
+
+    (show-all window)))
+
+(connect app activate alignment)
+(run app (command-line))
